@@ -1,0 +1,25 @@
+
+
+<script>		
+w = window.open("/publicadoranuncio/visao/LogOut.jsp","ExitSession","width=240,height=150,resizable=no,statusbar=no");
+
+w.document.open();
+w.document.write('<html>');
+w.document.write('<head>');
+w.document.write('<title>');
+w.document.write('Aviso');
+w.document.write('</title>');
+w.document.write('</head>');
+w.document.write('<body bgcolor="#ddddd5">');		
+w.document.write('<p align="center">'); 
+w.document.write('<font face="Arial" size="1">Aviso:<br>');
+w.document.write('Sessão encerrada.<br>');
+w.document.write('Faça o login novamente para acessar as áreas<br>');
+w.document.write('restritas do site.</font> ');		
+w.document.write('<br><input type="button" value="Fechar" style="font-size:9px;" onclick="javascript:window.close();"></p>');		
+window.location = "http://localhost:8080/publicadoranuncio/visao/index.jsp";
+w.document.write('</boby>');
+w.document.write('</html>');
+w.document.close();
+		
+</script>
