@@ -30,7 +30,8 @@ import modelo.Mail;
 		String senha = request.getParameter("senha");
 		int codigoUsuario = Integer.parseInt(request.getParameter("codigoUsuario"));
 		
-				
+		System.out.println("codigo do usuario "+codigoUsuario);
+		
 		DAOFactory df = DAOFactory.getDAOFactory(DAOFactory.POSTGRESQL);
 		DAOUsuario daoUsuario = df.getDAOUsuario();
 		Usuario usuario = new Usuario();
@@ -62,10 +63,10 @@ import modelo.Mail;
 						msg = "sucesso";
 					
 				}else{					
-					msg = "E-mail já existente na base!";									
+					msg = "E-mail jï¿½ existente na base!";									
 				}				
 			}else{				
-				msg = "Apelido já existente na base!";
+				msg = "Apelido jï¿½ existente na base!";
 			}			
 		}else 
 			if(comando.trim().equals("Alterar")){
@@ -73,7 +74,7 @@ import modelo.Mail;
 			Usuario u = daoUsuario.consultarApelido(usuario);
 			
 			if(u!=null){				
-				msg = "Apelido já existente na base!";
+				msg = "Apelido jï¿½ existente na base!";
 			}else{
 				msg = "sucesso";
 				daoUsuario.alterar(usuario);

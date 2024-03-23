@@ -38,10 +38,10 @@ import dao.*;
 			int codigoAnuncio = Integer.parseInt(request.getParameter("codigoAnuncio"));
 			int codigoUsuario = Integer.parseInt(request.getParameter("codigoUsuario"));
 			
-			//fábrica de dao
+			//fï¿½brica de dao
 			DAOFactory df = DAOFactory.getDAOFactory(DAOFactory.POSTGRESQL);			
 			
-			//Anúncio
+			//Anï¿½ncio
 			DAOAnuncio daoAnuncio = df.getDAOAnuncio();			
 			Anuncio anuncio = new Anuncio();
 			anuncio.setCodigoAnuncio(codigoAnuncio);
@@ -49,9 +49,9 @@ import dao.*;
 			
 			
 			/* 
-			 * Para contar qntas vezes um anúncio foi acessado
-			 * Caso o usuário ainda não tenha 
-			 * recebido um cookie, configura um para controle de acesso ao anúncio
+			 * Para contar qntas vezes um anï¿½ncio foi acessado
+			 * Caso o usuï¿½rio ainda nï¿½o tenha 
+			 * recebido um cookie, configura um para controle de acesso ao anï¿½ncio
 			 * 			 
 			 */
 			
@@ -59,7 +59,7 @@ import dao.*;
 			
 		
 						
-			//Usuário
+			//Usuï¿½rio
 			DAOUsuario daoUsuario = df.getDAOUsuario();
 			Usuario u = new Usuario();
 			u.setCodigoUsuario(codigoUsuario);
@@ -106,7 +106,7 @@ import dao.*;
 			
 			
 			
-			//anúncio com dados
+			//anï¿½ncio com dados
 			request.setAttribute("anuncio", anuncio);
 			
 			String msg = (String) request.getAttribute("msg");
@@ -143,13 +143,15 @@ import dao.*;
 			String email = request.getParameter("email");
 			String senha = request.getParameter("senha");
 			
+			System.out.println("<<<<<<<<<<<<<<<<<<  ControlePrincipal  >>>>>>>>>>>>>>>>>");
+			
 			//setando e-mail e senha
 			Usuario u = new Usuario();			
 			u.setEmail(email);
 			u.setSenha(senha);
 			
 					
-			//verificando se email do usuário já está cadastrado na base			
+			//verificando se email do usuï¿½rio jï¿½ estï¿½ cadastrado na base			
 			DAOUsuario daoUsuario = df.getDAOUsuario();
 			u = daoUsuario.consultar(u);
 				
@@ -164,7 +166,7 @@ import dao.*;
 			}else{					
 				if(u.getStatusValidacao().equals("H")){
 						
-					//se não tiver cria uma sessão para o usuário
+					//se nï¿½o tiver cria uma sessï¿½o para o usuï¿½rio
 					HttpSession sessao = request.getSession(true);
 							
 					//tempo em segundos						 						
@@ -230,7 +232,7 @@ import dao.*;
 			String operacao = request.getParameter("operacao");
 
 			
-			//para paginação
+			//para paginaï¿½ï¿½o
 			int a=0;
 			int p=0;
 			int pg=0;
@@ -241,7 +243,7 @@ import dao.*;
 				operacao="";
 			
 					
-			if(operacao.equals("Próximo>>")){
+			if(operacao.equals("Prï¿½ximo>>")){
 				p = Integer.parseInt(proxima) + 1;			
 				pg = p * totalRegistroPagina;				
 				request.setAttribute("paginaAtual",""+p);
@@ -256,7 +258,7 @@ import dao.*;
 			
 			
 			
-			//título
+			//tï¿½tulo
 			Anuncio anuncio = new Anuncio();			
 			anuncio.setTitulo(titulo);
 		
@@ -283,7 +285,7 @@ import dao.*;
 														
 			anuncio.setCategoria(categoria);
 			
-			//pesquisa anúncios
+			//pesquisa anï¿½ncios
 			DAOAnuncio daoAnuncio = df.getDAOAnuncio();			
 			ArrayList anuncioListaPesquisados = daoAnuncio.consultarTodosPesquisa(anuncio,criterio,pg);			
 			request.setAttribute("anuncioListaPesquisados", anuncioListaPesquisados);			

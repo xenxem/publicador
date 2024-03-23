@@ -7,8 +7,6 @@ import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.HtmlEmail;
 import org.apache.commons.mail.SimpleEmail;
 
-import com.sun.net.httpserver.HttpServer;
-
 
 public class Mail {
 	
@@ -33,7 +31,7 @@ public class Mail {
 			//pode ser qualquer um e-mail
 			email.addTo("salzinharj@gmail.com");
 			
-			//aqui precisa ser o e-mail que você fara a autenticaão
+			//aqui precisa ser o e-mail que vocï¿½ fara a autenticaï¿½o
 			email.setFrom("carlos.paula@gmail.com"); 
 			email.setSubject("CRMaster On-Line (Cadastro)");
 			email.setMsg("<a href='http://www.rio.rj.gov.br/'>Prefeitura do Rio</a>");
@@ -65,13 +63,13 @@ public class Mail {
 					 
 						 // incorpora a mensagem e obtem o cid (content ID)
 						 URL url = new URL("file:///c:/temp/servidor.jpg");
-						 String cid = emailHTML.embed(url, "Sorria você acabou de receber uma mensagem enviada por Carlos Através do Java");
+						 String cid = emailHTML.embed(url, "Sorria vocï¿½ acabou de receber uma mensagem enviada por Carlos Atravï¿½s do Java");
 						 
 						 // seta a mensagem em  
 						 emailHTML.setHtmlMsg("<html>The apache logo - <img src='" + cid + "': /></html>");
 						 
 						 // seta a mensagem correspondente sem  
-						 emailHTML.setTextMsg("Seu e-mail não suporta HTML");
+						 emailHTML.setTextMsg("Seu e-mail nï¿½o suporta HTML");
 						 
 						 // envia o e-mail 
 						 emailHTML.send();
@@ -109,7 +107,7 @@ public class Mail {
 					//pode ser qualquer um e-mail
 					emailSimples.addTo("carlos.paula@gmail.com");
 					
-					//aqui precisa ser o e-mail que você fara a autenticaão
+					//aqui precisa ser o e-mail que vocï¿½ fara a autenticaï¿½o
 					emailSimples.setFrom("carlos.paula@gmail.com"); 
 					emailSimples.setSubject("CRMaster On-Line");
 					emailSimples.setMsg("<a href='http://www.rio.rj.gov.br/'>Prefeitura do Rio</a>");

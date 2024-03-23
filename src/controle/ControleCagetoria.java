@@ -23,6 +23,9 @@ import dao.*;
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		
+		System.out.println("<<<<<<<<<<<<<<<<<<  ControleCategoria  >>>>>>>>>>>>>>>>>");
+		
 		String codigoCategoria = request.getParameter("codigoCategoria");
 		String nivelCategoria = request.getParameter("nivelCategoria");
 		
@@ -78,7 +81,7 @@ import dao.*;
 			
 		}
 		
-		//garantindo a exibição atualizada de categoria
+		//garantindo a exibiï¿½ï¿½o atualizada de categoria
 		HttpSession sessao = request.getSession(true);
 		ArrayList listaCategoria = daoCategoria.consultarTodos();
 		sessao.setAttribute("listaCategoria", listaCategoria);
